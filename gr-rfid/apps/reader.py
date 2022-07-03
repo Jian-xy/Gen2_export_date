@@ -1,4 +1,8 @@
 #Developed by: Nikos Kargas 
+# E:\edgefile\Gen2-UHF-RFID-Reader-master
+# 上面的文件夹记录的是快照 11 中对 reader.py, 以及 global_vars.h 所做的改动。
+# 这个新的 git 是为了导出数据而新建的库，改动后将再次进行编译。
+
 
 from gnuradio import gr
 from gnuradio import uhd
