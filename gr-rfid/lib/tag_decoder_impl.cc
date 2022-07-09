@@ -240,14 +240,14 @@ namespace gr {
           int k = round(j);
           RN16_samples_complex.push_back(in[k]);
 
-          //out_2[written_sync] = in[j];
-           //written_sync ++;
+          out_2[written_sync] = in[k];
+          written_sync ++;
 
           if (number_of_half_bits == 2*(RN16_BITS-1))
           {
             //out_2[written_sync] = h_est;
-             //written_sync ++;  
-            //produce(1,written_sync);        
+            //written_sync ++;  
+            produce(1,written_sync);        
             break;
           }
         }    
@@ -311,6 +311,7 @@ namespace gr {
         produce(1,written_sync);
         */
 
+
         EPC_bits   = tag_detection_EPC(EPC_samples_complex,EPC_index);
 
         
@@ -363,7 +364,7 @@ namespace gr {
               reader_state->reader_stats.tag_reads[result]=1;
             }
           }
-          else
+          else // 判断 EPC 是否被正确解码。
           {     
 
             if(reader_state->reader_stats.cur_slot_number > reader_state->reader_stats.max_slot_number)
